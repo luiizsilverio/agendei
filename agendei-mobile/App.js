@@ -1,12 +1,13 @@
 import { StatusBar } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './src/screens/login';
+import Account from './src/screens/account';
 
 export default function App() {
   return (
     <View styles={styles.container}>
       <StatusBar style="auto" />
-      <Login />
+      <Account />
     </View>
   );
 }

@@ -37,6 +37,6 @@ export const styles = StyleSheet.create({
   },
   link: {
     color: COLORS.blue,
-
+    fontSize: FONT_SIZE.sm,
   },
 })
