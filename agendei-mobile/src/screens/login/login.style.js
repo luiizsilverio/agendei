@@ -1,8 +1,7 @@
 import { StyleSheet } from "react-native";
 import { COLORS, FONT_SIZE } from "../../constants/theme";
 
-export const styles = StyleSheet.create({
-  
+export const styles = StyleSheet.create({  
   container: {
     backgroundColor: COLORS.white,
     width: '100%',
