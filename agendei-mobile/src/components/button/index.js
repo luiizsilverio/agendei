@@ -1,8 +1,8 @@
 import { Alert, Text, TouchableOpacity } from "react-native";
 import { getStyles } from "./button.style";
 
-function Button({ text, disabled }) {
-  const styles = getStyles(disabled);
+function Button({ text, bgColor, disabled }) {
+  const styles = getStyles(bgColor);
 
   function handlePress() {
     Alert.alert("clicou no botão");

@@ -1,6 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./card-agendamento.style";
 import icon from "../../constants/icon";
+import { COLORS } from "../../constants/theme";
 import Button from "../button";
 
 export default function CardAgendamento(props) {
@@ -25,7 +26,7 @@ export default function CardAgendamento(props) {
         </View>
 
         <View style={styles.btnContainer}>
-          <Button text="Cancelar Reserva" />        
+          <Button text="Cancelar Reserva" bgColor={COLORS.red} />        
         </View>
       </View>
     </View>

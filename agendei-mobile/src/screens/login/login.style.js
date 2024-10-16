@@ -36,6 +36,5 @@ export const styles = StyleSheet.create({
   },
   link: {
     color: COLORS.blue,
-
   },
 })

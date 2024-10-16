@@ -3,36 +3,34 @@ import { COLORS, FONT_SIZE } from "../../constants/theme";
 
 export const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    gap: 4,
+    flex: 1,
     backgroundColor: COLORS.white,
     borderBottomWidth: 1,
+    borderTopWidth: 1,
     borderColor: COLORS.gray4,
-    marginBottom: 12,
-    paddingBottom: 12,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    gap: 4,
   },
   content: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-end",
-    paddingVertical: 4,
+    alignItems: "center",
+    // alignItems: "flex-end",
     // flex: 1
   },
   contentData: {
-    gap: 4
+    gap: 4,
+    flex: 1
   },  
   iconContainer: {
     flexDirection: "row",
-    alignItems: "center",
     gap: 4
   },
   image: {
     width: 28,
     height: 28,
   },
-  btnContainer: {
-    paddingBottom: 6
-  },
+  btnContainer: {},
   title: {
     color: COLORS.gray1,
     fontSize: FONT_SIZE.md,

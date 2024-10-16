@@ -1,5 +1,5 @@
 import { Alert, Image, Text, TextInput, TouchableOpacity, View } from "react-native"
-import { styles } from "./login.style"
+import { styles } from "./login.style";
 import icons from "../../constants/icon";
 import Button from "../../components/button";
 

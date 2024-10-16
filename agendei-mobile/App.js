@@ -1,16 +1,16 @@
 import { StatusBar } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/screens/login';
-import Account from './src/screens/account';
-import Home from './src/screens/home';
-import Calendar from './src/screens/calendar';
+import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import Routes from './src/routes';
 
 export default function App() {
   return (
-    <View styles={styles.container}>
+    <>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
       <StatusBar style="auto" />
-      <Calendar />
-    </View>
+    </>
   );
 }
 
