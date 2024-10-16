@@ -3,23 +3,40 @@ import { COLORS, FONT_SIZE } from "../../constants/theme";
 
 export const styles = StyleSheet.create({
   container: {
+    // flex: 1,
+    gap: 4,
     backgroundColor: COLORS.white,
-    flexDirection: "row",
-    flex: 1,
-    gap: 10,
-    borderWidth: 1,
+    borderBottomWidth: 1,
     borderColor: COLORS.gray4,
     marginBottom: 12,
-    borderRadius: 4,
-    padding: 8,
+    paddingBottom: 12,
   },
   content: {
-    justifyContent: "center"
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    paddingVertical: 4,
+    // flex: 1
+  },
+  contentData: {
+    gap: 4
+  },  
+  iconContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4
+  },
+  image: {
+    width: 28,
+    height: 28,
+  },
+  btnContainer: {
+    paddingBottom: 6
   },
   title: {
     color: COLORS.gray1,
     fontSize: FONT_SIZE.md,
-    fontWeight: "bold"
+    // fontWeight: "bold"
   },
   text: {
     fontSize: FONT_SIZE.sm,
