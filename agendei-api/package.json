@@ -5,17 +5,23 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/index.js",
-    "dev2": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "ini_db": "node src/database/init.js",
+    "seed": "node src/database/init.js src/database/seed.sql"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.6",
+    "@types/sqlite3": "^3.1.11"
   }
 }
