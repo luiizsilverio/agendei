@@ -2,23 +2,26 @@ import Database from "../database/config.js";
 
 class DoctorRepository {
 
-  async all() {
-    const db = await Database();
-
-    const doctors2 = [
-      {id: 1, name: "Heber", specialty: "Cardiologista", icon: "M"},
-      {id: 1, name: "Palmira", specialty: "Cardiologista", icon: "F"},
-      {id: 1, name: "Valdirene", specialty: "Cardiologista", icon: "F"},
-    ]
+  async all(name) {
+    const db = await Database();    
+    let doctors;
     
-   const doctors = await db.all(`
-      SELECT * FROM doctors ORDER BY name
-    `, []);
+    if (!name) {
+      doctors = await db.all(`
+          SELECT * FROM doctors ORDER BY name
+        `, []);
+    } else {
+      doctors = await db.all(`
+          SELECT * FROM doctors 
+          WHERE name LIKE ?
+          ORDER BY name
+      `, ["%" + name + "%"])
+    }
     
     return doctors;
   }
 
-  async insert() {
+  async insert(name, specialty, icon) {
     return { message: "Inserir médico" };
   }
   

@@ -4,13 +4,14 @@ const repository = new DoctorRepository();
 
 class DoctorService {
 
-  async all() {
-    const doctors = repository.all();    
+  async listar(name, specialty) {
+    const doctors = await repository.all(name, specialty);    
     return doctors;
   }
 
-  async insert() {
-    return repository.insert();
+  async incluir(name, specialty, icon) {
+    const doctor = await repository.insert(name, specialty, icon);
+    return doctor;
   }
 
 }

@@ -5,8 +5,8 @@ import DoctorController from "../controllers/doctors.controller.js";
 const routes = express.Router();
 const controller = new DoctorController();
 
-routes.get('/', controller.index);
-
+routes.get("/",  controller.index);
+routes.post("/", controller.insert);
 
 
 export default routes;
