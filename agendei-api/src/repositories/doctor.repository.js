@@ -22,9 +22,41 @@ class DoctorRepository {
   }
 
   async insert(name, specialty, icon) {
-    return { message: "Inserir médico" };
+    const db = await Database();    
+    
+    const doctor = await db.run(`
+        INSERT INTO doctors (name, specialty, icon) VALUES (?, ?, ?)
+      `, [name, specialty, icon], 
+      // (err) => {
+      //   if (!err) console.log(this.lastID);
+      // }
+    );
+    
+    return { id_doctor: doctor.lastID };
   }
   
+  async update(id_doctor, name, specialty, icon) {
+    const db = await Database();    
+    
+    const doctor = await db.run(`
+        UPDATE doctors SET name = ?, specialty = ?, icon = ?
+        WHERE id_doctor = ?
+      `, [name, specialty, icon, id_doctor], 
+    );
+    
+    return { id_doctor };
+  }
+
+  async delete(id_doctor) {
+    const db = await Database();    
+    
+    const doctor = await db.run(`
+        DELETE FROM doctors WHERE id_doctor = ?
+      `, [id_doctor], 
+    );
+    
+    return { id_doctor };
+  }
 
 }
 
