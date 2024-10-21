@@ -25,6 +25,16 @@ class UserRepository {
 
     return user;
   }
+
+  async getById(id_user) {
+    const db = await Database();    
+
+    const user = await db.get(`
+      SELECT id_user, name, email FROM users WHERE id_user = ?
+    `, [id_user]);
+
+    return user;
+  }
 }
 
 export default UserRepository;

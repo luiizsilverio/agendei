@@ -34,6 +34,12 @@ class UserService {
     return user
   }
 
+  
+  async profile(id_user) {
+    const profile = await repository.getById(id_user);    
+    return profile;
+  }
+
 }
 
 export default UserService;

@@ -24,32 +24,10 @@ class UserController {
     }
   }
 
-  // async listar(req, res) {
-  //   const { name, specialty } = req.query;
-
-  //   const doctors = await service.listar(name, specialty);
-
-  //   res.json(doctors);
-  // }
-
-
-  // async alterar(req, res) {
-  //   const { id_doctor } = req.params;
-
-  //   const { name, specialty, icon } = req.body;
-
-  //   const doctor = await service.alterar(id_doctor, name, specialty, icon);
-
-  //   res.status(201).json(doctor);
-  // }
-
-  // async excluir(req, res) {
-  //   const { id_doctor } = req.params;
-
-  //   const doctor = await service.excluir(id_doctor);
-
-  //   res.status(200).json(doctor);
-  // }
+  async profile(req, res) {
+    const user = await service.profile(req.id_user);
+    res.json(user);
+  }
 
   
 }
