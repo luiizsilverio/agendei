@@ -5,7 +5,7 @@ import jwt from "../middleware/token.js";
 
 const routes = Router();
 
-routes.use("/doctors", jwt.validateToken, doctorRoutes);
-routes.use("/users",   userRoutes);
+routes.use("/users",    userRoutes);
+routes.use("/doctors",  jwt.validateToken, doctorRoutes);
 
 export default routes;

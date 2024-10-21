@@ -58,6 +58,19 @@ class DoctorRepository {
     return { id_doctor };
   }
 
+  async getServices(id_doctor) {
+    const db = await Database();
+
+    const serv = await db.all(`
+        SELECT s.id_service, s.description, ds.price FROM SERVICES s
+        JOIN doctors_services ds ON ds.id_service = s.id_service
+        WHERE ds.id_doctor = ?
+      `, [id_doctor]
+    );
+
+    return serv;
+  }
+
 }
 
 export default DoctorRepository;

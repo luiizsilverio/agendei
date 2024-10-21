@@ -23,6 +23,12 @@ class DoctorService {
     const doctor = await repository.delete(id_doctor);
     return doctor;
   }
+
+  async listarServicos(id_doctor) {
+    const services = await repository.getServices(id_doctor);
+    return services;
+  }
+
 }
 
 export default DoctorService;

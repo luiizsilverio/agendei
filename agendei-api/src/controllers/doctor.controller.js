@@ -35,9 +35,16 @@ class DoctorController {
 
     const doctor = await service.excluir(id_doctor);
 
-    res.status(200).json(doctor);
+    res.json(doctor);
   }
 
+  async listarServicos(req, res) {
+    const { id_doctor } = req.params;
+
+    const serv = await service.listarServicos(id_doctor);
+
+    res.json(serv);
+  }
   
 }
 
