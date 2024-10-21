@@ -1,6 +1,5 @@
 import express from "express";
 import DoctorController from "../controllers/doctor.controller.js";
-// import upload from "../config/multer.js";
 
 const routes = express.Router();
 const controller = new DoctorController();

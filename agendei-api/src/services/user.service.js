@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import UserRepository from "../repositories/user.repository.js";
+import jwt from "../middleware/token.js";
 
 const repository = new UserRepository();
 
@@ -10,6 +11,8 @@ class UserService {
     const hashedPassword = await bcrypt.hash(password, 10); 
 
     const user = await repository.insert(name, email, hashedPassword);
+
+    user.token = jwt.createToken(user.id_user);
 
     return user;
   }
@@ -24,6 +27,8 @@ class UserService {
       if (!passwordOk) return null;
 
       delete user.password;
+
+      user.token = jwt.createToken(user.id_user);
     }
 
     return user
