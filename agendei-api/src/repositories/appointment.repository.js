@@ -34,6 +34,17 @@ class AppointmentRepository {
     return { id_appointment: appointment.lastID };
   }
 
+  async delete(id_appointment, id_user) {
+    const db = await Database();    
+    
+    await db.run(`
+        DELETE FROM appointments WHERE id_appointment = ? and id_user = ?
+      `, [id_appointment, id_user], 
+    );
+    
+    return { id_appointment };
+  }
+
 }
 
 export default AppointmentRepository;

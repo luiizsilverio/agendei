@@ -23,6 +23,13 @@ class AppointmentController {
     res.status(201).json(appointment);
   }
 
+  async excluir(req, res) {
+    const { id_appointment } = req.params;
+
+    const doctor = await service.excluir(id_appointment, req.id_user);
+
+    res.json(doctor);
+  }
   
 }
 

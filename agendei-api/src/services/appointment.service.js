@@ -21,6 +21,10 @@ class AppointmentService {
     return appointment;
   }
 
+  async excluir(id_appointment, id_user) {
+    const appointment = await repository.delete(id_appointment, id_user);
+    return appointment;
+  }
 
 }
 

@@ -6,6 +6,7 @@ const controller = new AppointmentController();
 
 routes.get("/", controller.listarPorUsuario);
 routes.post("/", controller.incluir);
+routes.delete("/:id_appointment", controller.excluir);
 
 
 export default routes;
