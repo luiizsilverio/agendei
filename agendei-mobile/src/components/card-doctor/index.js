@@ -6,7 +6,7 @@ export default function CardDoctor(props) {
   const { doctor } = props;
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => props.onPress(doctor)}>
       <Image 
         source={doctor.icon === "F" ? icon.female : icon.male} 
         alt={doctor.name} 

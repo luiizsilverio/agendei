@@ -4,7 +4,12 @@ import { doctors_services } from "../../constants/data";
 import CardService from "../../components/card-service";
 import icon from "../../constants/icon";
 
-export default function Services() {
+export default function Services(props) {
+
+  function handleClick(id_service) {
+    props.navigation.navigate("schedule");
+  }
+
   return (
     <View style={styles.container}>
 
@@ -19,7 +24,7 @@ export default function Services() {
         keyExtractor={(item) => item.id_service}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <CardService service={item} />
+          <CardService service={item} onPress={handleClick} />
         )}
       />
     </View>

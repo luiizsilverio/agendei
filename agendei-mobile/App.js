@@ -1,17 +1,12 @@
 import { StatusBar } from 'react-native';
 import { StyleSheet, View } from 'react-native';
-import { NavigationContainer } from "@react-navigation/native";
-import Routes from './src/routes';
-import Services from './src/screens/services';
-import Schedule from './src/screens/schedule';
+// import { NavigationContainer } from "@react-navigation/native";
+import { Routes } from './src/routes';
 
 export default function App() {
   return (
     <>
-      <NavigationContainer>
-        <Routes />
-        {/* <Services /> */}
-      </NavigationContainer>
+      <Routes />
       <StatusBar style="auto" />
     </>
   );

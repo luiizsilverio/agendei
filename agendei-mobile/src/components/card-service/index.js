@@ -7,7 +7,7 @@ export default function CardService(props) {
   const { service } = props;
 
   return (
-      <View style={styles.container}>
+      <View style={styles.container} >
         <View style={styles.content}>
           <Text style={styles.text}>{service.description}</Text>
           <Text style={styles.price}>
@@ -15,7 +15,7 @@ export default function CardService(props) {
           </Text>
         </View>
         <View>
-          <Button text="Agendar" />
+          <Button text="Agendar" onPress={() => props.onPress(service.id_service)} />
         </View>
       </View>
   )
