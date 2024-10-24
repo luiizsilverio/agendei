@@ -25,7 +25,7 @@ export function AppRoutes() {
           headerTitleAlign: "center",
           headerTintColor: COLORS.white,
           headerShadowVisible: false,
-          headerStyle: styles.header
+          headerStyle: styles.services
         }} 
       />
       <Screen 
@@ -46,5 +46,8 @@ export function AppRoutes() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: COLORS.white
+  },
+  services: {
+    backgroundColor: COLORS.blue
   }
 })

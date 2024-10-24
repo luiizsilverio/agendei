@@ -6,7 +6,7 @@ import CardDoctor from "../../components/card-doctor";
 export default function Home(props) {
 
   function handleClick(doctor) {
-    props.navigation.navigate("services");
+    props.navigation.navigate("services", doctor);
   }
 
   return (

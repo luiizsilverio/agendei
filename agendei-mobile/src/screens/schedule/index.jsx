@@ -9,10 +9,15 @@ import Button from "../../components/button";
 LocaleConfig.locales["pt-br"] = ptBR;
 LocaleConfig.defaultLocale = 'pt-br';
 
-export default function Schedule() {
+export default function Schedule(props) {
+  const { id_doctor, id_service } = props.route.params;
   const hoje = new Date().toISOString().slice(0, 10);
   const [data, setData] = useState(hoje);
-  const [horario, setHorario] = useState("");
+  const [horario, setHorario] = useState("9:00");
+
+  function handlePress() {
+    console.log( id_doctor, id_service, data, horario);
+  }
 
   return (
     <View  style={styles.container}>
@@ -38,7 +43,7 @@ export default function Schedule() {
       </Picker>
   
       <View style={styles.btnContainer}>
-        <Button text="Confirmar Agendamento" />
+        <Button text="Confirmar Agendamento" onPress={handlePress} />
       </View>
     </View>
   )

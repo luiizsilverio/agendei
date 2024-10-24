@@ -5,18 +5,22 @@ import CardService from "../../components/card-service";
 import icon from "../../constants/icon";
 
 export default function Services(props) {
+  const { id_doctor, name, specialty, icon: iconDoctor } = props.route.params;
 
   function handleClick(id_service) {
-    props.navigation.navigate("schedule");
+    props.navigation.navigate("schedule", {
+      id_doctor,
+      id_service
+    });
   }
 
   return (
     <View style={styles.container}>
 
       <View style={styles.banner}>
-        <Image source={icon.female} style={styles.image} />
-        <Text style={styles.doctor}>Dra. Nise da Silva</Text>
-        <Text style={styles.specialty}>Cirurgia Plástica</Text>
+        <Image source={iconDoctor === "F" ? icon.female : icon.male} style={styles.image} />
+        <Text style={styles.doctor}>{ name }</Text>
+        <Text style={styles.specialty}>{ specialty}</Text>
       </View>
 
       <FlatList 
