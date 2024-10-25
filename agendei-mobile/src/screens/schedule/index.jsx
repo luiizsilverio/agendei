@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Text, View } from "react-native";
-import { Calendar, LocaleConfig } from "react-native-calendars";
+import { Alert, Text, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import { Calendar, LocaleConfig } from "react-native-calendars";
 import { styles } from "./schedule.style";
 import { ptBR } from "../../constants/calendar";
 import Button from "../../components/button";
+import api from "../../lib/api";
 
 LocaleConfig.locales["pt-br"] = ptBR;
 LocaleConfig.defaultLocale = 'pt-br';
@@ -15,10 +16,28 @@ export default function Schedule(props) {
   const [data, setData] = useState(hoje);
   const [horario, setHorario] = useState("9:00");
 
-  function handlePress() {
-    console.log( id_doctor, id_service, data, horario);
-  }
+  async function handleSchedule() {
+    try {
+      const response = await api.post("appointments", {
+        id_doctor,
+        id_service,
+        booking_date: data, 
+        booking_hour: horario
+      });
 
+      if (response.data?.id_appointment) {
+        props.navigation.popToTop();
+      }
+    }
+    catch (error) {
+      if (error.response?.data.error)
+        Alert.alert(error.response.data.error);
+      else
+        Alert.alert("Ocorreu um erro, tente novamente mais tarde");
+      console.log(error);
+    }
+  }
+  
   return (
     <View  style={styles.container}>
       <Calendar 
@@ -43,7 +62,7 @@ export default function Schedule(props) {
       </Picker>
   
       <View style={styles.btnContainer}>
-        <Button text="Confirmar Agendamento" onPress={handlePress} />
+        <Button text="Confirmar Agendamento" onPress={handleSchedule} />
       </View>
     </View>
   )

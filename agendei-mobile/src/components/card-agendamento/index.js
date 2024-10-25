@@ -26,7 +26,11 @@ export default function CardAgendamento(props) {
         </View>
 
         <View style={styles.btnContainer}>
-          <Button text="Cancelar Reserva" bgColor={COLORS.red} />        
+          <Button 
+            text="Cancelar Reserva" 
+            bgColor={COLORS.red} 
+            onPress={() => props.onPress(appointment.id_appointment)} 
+          />        
         </View>
       </View>
     </View>

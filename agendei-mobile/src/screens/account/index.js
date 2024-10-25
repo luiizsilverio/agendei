@@ -3,7 +3,7 @@ import { Alert, Image, Text, TextInput, TouchableOpacity, View } from "react-nat
 import { styles } from "./account.style"
 import icons from "../../constants/icon";
 import Button from "../../components/button";
-import api from "../../constants/api";
+import api from "../../lib/api";
 import { authContext } from "../../contexts/auth-context";
 
 export default function Account(props) {
