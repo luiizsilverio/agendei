@@ -1,13 +1,11 @@
-
+import { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthRoutes } from './auth.routes'; // rotas públicas
 import { AppRoutes } from './app.routes';   // rotas privadas
-import { StackRoutes } from './stack.routes';
+import { authContext } from '../contexts/auth-context';
 
 export function Routes() {
-  const user = {
-    id_user: 1
-  }
+  const { user } = useContext(authContext);
 
   return (
     <NavigationContainer>

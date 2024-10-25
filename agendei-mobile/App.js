@@ -1,14 +1,13 @@
-import { StatusBar } from 'react-native';
-import { StyleSheet, View } from 'react-native';
-// import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar, StyleSheet } from 'react-native';
+import { AuthProvider } from './src/contexts/auth-context';
 import { Routes } from './src/routes';
 
 export default function App() {
   return (
-    <>
+    <AuthProvider>
       <Routes />
       <StatusBar style="auto" />
-    </>
+    </AuthProvider>
   );
 }
 

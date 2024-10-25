@@ -19,8 +19,10 @@ export const styles = StyleSheet.create({
     // height: 23
   },
   text: {
-    fontSize: FONT_SIZE.xxl,
-    color: COLORS.gray1
+    fontSize: FONT_SIZE.lg,
+    fontWeight: "bold",
+    color: COLORS.blue,
+    textAlign: "center"
   },
   footer: {
     flexDirection: "row",
