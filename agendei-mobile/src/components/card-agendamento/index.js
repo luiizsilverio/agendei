@@ -7,6 +7,8 @@ import Button from "../button";
 export default function CardAgendamento(props) {
   const { appointment } = props;
 
+  const formatDate = (vdata, vhora) => new Date(vdata + "T" + vhora).toLocaleDateString('pt-BR');
+
   return (
     <View style={styles.container}>    
       <Text style={styles.title}>{appointment.service} - {appointment.doctor}</Text>
@@ -16,7 +18,9 @@ export default function CardAgendamento(props) {
         <View style={styles.contentData}>
           <View style={styles.iconContainer}>
             <Image source={icon.calendar} alt="Data do agendamento" style={styles.image} />
-            <Text style={styles.text}>{appointment.booking_date}</Text>
+            <Text style={styles.text}>
+              {formatDate(appointment.booking_date, appointment.booking_hour)}
+            </Text>
           </View>
 
           <View style={styles.iconContainer}>

@@ -40,6 +40,7 @@ export function TabRoutes() {
         options={{
           headerTitle: 'Minhas Reservas',
           headerTintColor: COLORS.blue,
+          unmountOnBlur: true,
           tabBarIcon: ({ focused }) => (
             <Image 
               source={icon.calendar} 
@@ -54,6 +55,7 @@ export function TabRoutes() {
         options={{
           headerTitle: 'Meu Perfil',
           headerTintColor: COLORS.blue,
+          unmountOnBlur: true,
           tabBarIcon: ({ focused }) => (
             <Image 
               source={icon.profile} 
